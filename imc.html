@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+    
+    function classificacao(imc) {
+        if(imc<=18.5){
+            document.write("Abaixo do peso");
+        }else{
+            if(imc<=24.9){
+                document.write("Peso Normal");
+            }else{
+                if(imc<=29.9){
+                    document.write("Sobrepeso");
+                }else{
+                    if(imc<40){
+                        document.write("Obesidade");
+                    }else{
+                        document.write("Obesidade Grave");
+                    }
+                }
+            }
+        }
+    }
+
+    function mostra(nome,imc){
+
+        document.write("O IMC de "+ nome +" é "+ imc);
+        document.write("<br>");
+        classificacao(imc);
+        pulaLinha();
+
+    }
+
+    function calculaImc(peso,altura) {
+
+        var imc = (peso/(altura*altura));
+        return imc.toFixed(2);
+    }
+
+
+
+    var renato = calculaImc(78,1.78);
+
+    var paulo = calculaImc(76,1.80);
+
+    var ana = calculaImc(110,1.75);
+
+    var mateus = calculaImc(90,1.77);
+
+    var boderler = calculaImc(65,1.90);
+
+    var bartolomeu = calculaImc(140,1.65);
+
+    var nicoly = calculaImc(40,1.85);
+
+    mostra("Renato",renato);
+    mostra("Paulo",paulo);
+    mostra("Ana",ana);
+    mostra("Mateus",mateus);
+    mostra("Boderler",boderler);
+    mostra("Bartolomeu",bartolomeu);
+    mostra("Nicoly",nicoly);
+
+</script>

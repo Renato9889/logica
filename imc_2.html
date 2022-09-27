@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+    
+    function classificacao(imc,nome) {
+        if(imc<=18.5){
+            alert(nome + " você está abaixo do peso");
+        }else{
+            if(imc<=24.9){
+                alert(nome + " seu peso é Normal");
+            }else{
+                if(imc<=29.9){
+                    alert(nome + " você está com sobrepeso");
+                }else{
+                    if(imc<40){
+                        alert(nome + " você está com obesidade");
+                    }else{
+                        alert(nome + " você tem obesidade Grave");
+                    }
+                }
+            }
+        }
+    }
+
+    function mostra(imc, nome){
+
+        alert(nome + " seu IMC é "+ imc);
+        document.write("<br>");
+        classificacao(imc, nome);
+        pulaLinha();
+
+    }
+
+    function calculaImc(peso,altura) {
+
+        var imc = (peso/(altura*altura));
+        return imc.toFixed(2);
+    }
+
+
+    var nome = prompt("Qual o seu nome?");
+    var peso = prompt(nome + " infome seu peso: ");
+    var altura = prompt(nome + " infome sua altura: ");
+
+    var imc = calculaImc(peso,altura);
+    mostra(imc, nome);
+    
+
+</script>
